@@ -1,0 +1,55 @@
+<div class="container">
+  <div [hidden]="clientAddes">
+    <h3 style="margin-top: 30px">New Client Information <span style="font-size: small">
+      * is a required field
+    </span> </h3>
+
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field class="example-full-width">
+        <input matInput id="name" type="text" required [(ngModel)]="newClient.name" name="name" placeholder="Enter Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="nic" type="text" required [(ngModel)]="newClient.nic" name="nic" placeholder="Enter nic">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="email" type="email" required [(ngModel)]="newClient.email" name="email" placeholder="Enter email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="address" type="text" required [(ngModel)]="newClient.address" name="address" placeholder="Enter address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="phone" type="text" required [(ngModel)]="newClient.phone" name="phone" placeholder="Enter phone">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="skype" type="text" required [(ngModel)]="newClient.skype" name="skype" placeholder="Enter skype">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="bday" type="date" required [(ngModel)]="newClient.bday" name="bday" placeholder="Enter bday">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput id="OfficePhone" type="text" required [(ngModel)]="newClient.wphone" name="wphone" placeholder="Enter wphone">
+      </mat-form-field>
+      <br>
+      Image &nbsp;
+      <input id="tile" type="file" id="clientImage" name="clientImage" (change)="uploadImageService.fileChangeEvent($event)">
+      <br><br>
+
+      <mat-grid-list cols="20" rowHeight="60px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <button color="primary" mat-raised-button type="submit">Add Client</button>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <a  color="warn" mat-raised-button routerLink="/">Cancel</a>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </form>
+  </div>
+</div>
